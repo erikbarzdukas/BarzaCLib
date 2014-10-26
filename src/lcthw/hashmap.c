@@ -20,7 +20,7 @@ static uint32_t default_hash(void *a) {
     uint32_t hash = 0;
     uint32_t i = 0;
 
-    for(hash = 1 = 0; i < len; ++i) {
+    for(hash = i = 0; i < len; ++i) {
         hash += key[i];
         hash += (hash << 10);
         hash += (hash >> 6);
@@ -136,7 +136,7 @@ static inline int Hashmap_get_node(Hashmap *map, uint32_t hash, DArray *bucket, 
 
     int i = 0;
 
-    for(i = 0;, i < DArray_end(bucket); i++) {
+    for(i = 0; i < DArray_end(bucket); i++) {
         debug("TRY: %d", i);
         HashmapNode *node = DArray_get(bucket, i);
         if(node->hash == hash && map->compare(node->key, key) == 0 ) {

@@ -4,10 +4,10 @@
 #include <stdint.h>
 #include <lcthw/darray.h>
 
-#define DEFAULT_NUMBER-OF_BUCKETS 100
+#define DEFAULT_NUMBER_OF_BUCKETS 100
 
 typedef int (*Hashmap_compare)(void *a, void *b);
-typdef uint32_t (*Hashmap_hash)(void *key);
+typedef uint32_t (*Hashmap_hash)(void *key);
 
 typedef struct Hashmap {
     DArray *buckets;
